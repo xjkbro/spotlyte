@@ -1,4 +1,5 @@
 "use client";
+import CurrentSong from "@/components/CurrentSongClient";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 import { signOut, useSession } from "next-auth/react";
@@ -9,7 +10,8 @@ export default function Admin() {
     return (
         <>
             <button onClick={() => signOut()}>Sign out</button>
-            <pre>{JSON.stringify(session, null, 2)}</pre>;
+            <pre>{JSON.stringify(session, null, 2)}</pre>
+            <CurrentSong />
         </>
     );
 }

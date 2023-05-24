@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import NavButtons from "@/components/NavButtons";
 
-export default async function Heading({ title = "Welcome to Spotlyte" }) {
+export default async function Heading({ title = "" }) {
     const user = await getUser();
     return (
         <div className="flex justify-between items-center h-24">
@@ -16,7 +16,7 @@ export default async function Heading({ title = "Welcome to Spotlyte" }) {
             </div>
             <Link
                 href="/me"
-                className="flex gap-4 bg-neutral-400 rounded-full h-fit p-1 text-slate-100"
+                className="flex gap-4 bg-neutral-700 rounded-full h-fit p-1 text-slate-100"
             >
                 <Image
                     src={user.images[0].url}
@@ -25,7 +25,7 @@ export default async function Heading({ title = "Welcome to Spotlyte" }) {
                     height={20}
                     className="w-6 h-6 rounded-full bg-slate-100"
                 />
-                <div className="px-4">{user.display_name}</div>
+                <div className="px-4 truncate">{user.display_name}</div>
             </Link>
         </div>
     );

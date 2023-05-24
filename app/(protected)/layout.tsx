@@ -27,7 +27,7 @@ export default async function ProtectedLayout({
                 >
                     <main className="flex flex-col justify-center items-center h-screen w-full overflow">
                         <section className="h-full w-full bg-neutral-700 overflow-scroll">
-                            <div className="relative p-8">
+                            <div className="relative p-2 lg:p-8">
                                 <div className="absolute left-0 top-0 h-96 w-full z-10 bg-gradient-to-b from-neutral-900 via-neutral-800 via-20% to-neutral-700 to-100% text-slate-100"></div>
                                 <div className="relative z-20">{children}</div>
                             </div>

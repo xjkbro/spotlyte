@@ -34,6 +34,7 @@ export const getNowPlaying = async () => {
         headers: {
             Authorization: `Bearer ${access_token}`,
         },
+        next: { revalidate: 1 },
     }).then((res) => {
         if (res.status == 200) return res.json();
         return { is_playing: false };
