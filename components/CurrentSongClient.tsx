@@ -1,8 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
-import useSWR from "swr";
-import queryString from "query-string";
 import useSpotify from "@/lib/hooks/useSpotify";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,6 +12,8 @@ export default function CurrentSong({
     spotifyApi: any;
     session: any;
 }) {
+    // const spotifyApi = useSpotify();
+    // const { data: session } = useSession();
     const [playing, setCurrentSong] = useState(null);
 
     useEffect(() => {
