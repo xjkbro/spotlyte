@@ -1,4 +1,6 @@
+import { getServerSession } from "next-auth";
 import queryString from "query-string";
+import { authOptions } from "./auth";
 
 const client_id = process.env.SPOTIFY_CLIENT_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
@@ -80,12 +82,16 @@ export const getUserPlaylists = async (userId: string) => {
     return data;
 };
 export const getPlaylistDetails = async (playlistId: string) => {
-    const { access_token } = await getAccessToken();
+    // const { access_token } = await getAccessToken();
+
+    const session = await getServerSession(authOptions);
+    const token = session?.user?.accessToken;
+
     const data = await fetch(
         `https://api.spotify.com/v1/playlists/${playlistId}`,
         {
             headers: {
-                Authorization: `Bearer ${access_token}`,
+                Authorization: `Bearer ${token}`,
             },
         }
     ).then((res) => {

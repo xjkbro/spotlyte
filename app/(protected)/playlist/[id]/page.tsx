@@ -5,8 +5,12 @@ import Link from "next/link";
 import React from "react";
 
 export default async function Playlist({ params }: { params: { id: string } }) {
+    // const user = await getUser();
+    // const playlists = await getUserPlaylists(user.id);
+
     const playlist = await getPlaylistDetails(params.id);
-    console.log(playlist.tracks.items[0]);
+    // console.log(playlist.tracks.items[0]);
+    console.log(playlist);
     return (
         <>
             {/* @ts-expect-error Server Component */}

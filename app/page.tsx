@@ -9,7 +9,7 @@ export default async function Home() {
     return (
         <div className="h-screen w-full flex justify-center items-center text-slate-100 bg-gradient-to-b from-neutral-900 via-neutral-800 via-20% to-neutral-700 to-100% overflow-scroll">
             <div className="w-full h-full lg:w-5/6 lg:h-5/6 bg-gradient-to-bl from-violet-600 via-fuchsia-700  to-red-400 background-animate p-8 lg:p-24 font-mono grid items-center lg:grid-cols-2 lg:gap-24">
-                <div className="">
+                {/* <div className="">
                     <div className=" text-4xl lg:text-6xl font-mono font-bold text-center">
                         SpotLyte
                     </div>
@@ -28,6 +28,31 @@ export default async function Home() {
                         {"//"}
                     </div>
 
+                    <div className=" text-xl lg:text-3xl font-mono">
+                        Click the button to the right and just vibe. 😎
+                    </div>
+                </div> */}
+                <div className="">
+                    <div className=" text-4xl lg:text-6xl font-mono font-bold">
+                        SpotLyte
+                    </div>
+                    <br />
+                    <div className=" text-xl lg:text-2xl font-mono font-thin">
+                        {/* {"//"} */}
+                    </div>
+                    {/* <div className=" text-xl lg:text-4xl font-mono">
+                        A lyte-weight Spotify player for simple listening.
+                    </div> */}
+                    <br />
+                    <div className=" text-xl lg:text-4xl font-mono">
+                        It&apos;s like Spotify, but lyte.
+                    </div>
+                    <div className=" text-xl lg:text-2xl font-mono font-thin">
+                        {/* {"//"} */}
+                    </div>
+                    <br />
+                    <SignIn />
+
                     {/* <div className=" text-xl lg:text-3xl font-mono">
                         Click the button to the right and just vibe. 😎
                     </div> */}
@@ -40,7 +65,6 @@ export default async function Home() {
                         src={"/mockup.png"}
                         alt="Demo"
                     />
-                    <SignIn />
                 </div>
             </div>
         </div>
